@@ -33,7 +33,8 @@ app_ui <- function(request) {
           menuItem("Statistical analysis", tabName = "Stat", 
                    menuSubItem("Completely randomized design", tabName = "DIC", icon = icon("minus")),
                    menuSubItem("Randomized block design", tabName = "DBC", icon = icon("minus")),
-                   menuSubItem("Split plot design", tabName = "parc_sub", icon = icon("minus"))
+                   menuSubItem("Split plot design", tabName = "parc_sub", icon = icon("minus")),
+                   menuSubItem("Incomplete block design", tabName = "IBD", icon = icon("minus"))
           ),
           tags$li(class = "dropdown",
                   tags$a(href="https://statgen-esalq.github.io/", target="_blank", 
@@ -150,16 +151,15 @@ app_ui <- function(request) {
                   mod_dic_ui("dic_ui_1")
           ),
           tabItem(tabName = "parc_sub",
-                  mod_splitPlot_ui("splitPlot_ui_1")
+                  mod_splitPlot_ui("splitPlot_ui_1"),
           ),
-          tabItem(tabName = "DBC",
-                  mod_dbc_ui("dbc_ui_1")
-                  
-          )        
+          tabItem(tabName = "IBD",
+                  mod_ibd_ui("ibd_ui_1")
+            )
+          )    
         )
       )
     )
-  )
 }
 
 #' Add external Resources to the Application
