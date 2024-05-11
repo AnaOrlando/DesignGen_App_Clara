@@ -16,4 +16,5 @@ app_server <- function( input, output, session ) {
   callModule(mod_dic_server, "dic_ui_1")
   callModule(mod_splitPlot_server, "splitPlot_ui_1")
   callModule(mod_dbc_server, "dbc_ui_1")
+  callModule(mod_ibd_server, "ibd_ui_1")
 }
